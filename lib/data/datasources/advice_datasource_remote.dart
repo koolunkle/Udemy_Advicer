@@ -9,7 +9,9 @@ mixin AdviceDatasourceRemote {
 }
 
 class AdviceDatasourceRemoteImpl implements AdviceDatasourceRemote {
-  final http.Client client = http.Client();
+  AdviceDatasourceRemoteImpl({required this.client});
+
+  final http.Client client;
 
   @override
   Future<AdviceModel> getRandomAdviceFromApi() async {

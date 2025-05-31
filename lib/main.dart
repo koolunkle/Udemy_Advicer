@@ -1,3 +1,4 @@
+import 'package:advicer/injection.dart' as di;
 import 'package:advicer/presentation/core/services/theme_service.dart';
 import 'package:advicer/presentation/pages/advice_page.dart';
 import 'package:advicer/theme.dart';
@@ -5,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(
     ChangeNotifierProvider<ThemeService>(
       create: (context) => ThemeService(),

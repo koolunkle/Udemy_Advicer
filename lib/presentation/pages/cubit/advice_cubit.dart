@@ -11,9 +11,9 @@ const String cacheFailureMessage = 'Oops, cache failed. please try again';
 const String serverFailureMessage = 'Oops, API Error. please try again';
 
 class AdviceCubit extends Cubit<AdviceCubitState> {
-  AdviceCubit() : super(AdviceInitial());
+  AdviceCubit({required this.adviceUseCases}) : super(AdviceInitial());
 
-  final AdviceUseCases adviceUseCases = AdviceUseCases();
+  final AdviceUseCases adviceUseCases;
 
   Future<void> adviceRequested() async {
     emit(AdviceStateLoading());

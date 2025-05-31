@@ -1,3 +1,4 @@
+import 'package:advicer/injection.dart';
 import 'package:advicer/presentation/core/services/theme_service.dart';
 import 'package:advicer/presentation/pages/cubit/advice_cubit.dart';
 import 'package:advicer/presentation/pages/cubit/advice_cubit_state.dart';
@@ -14,7 +15,7 @@ class AdvicePageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdviceCubit(),
+      create: (context) => serviceLocator<AdviceCubit>(),
       child: const AdvicePage(),
     );
   }
